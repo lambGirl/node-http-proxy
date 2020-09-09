@@ -56,7 +56,7 @@ http.createServer(function (req, res) {
 
   process.stdout.write(connections.length + ', ');
 
-  if (connections.length > 110 || go) {
+  if (connections.length > 2 || go) {
     go = true;
     while (connections.length) {
       connections.shift()();
@@ -64,5 +64,5 @@ http.createServer(function (req, res) {
   }
 }).listen(9004);
 
-util.puts('http proxy server'.blue + ' started '.green.bold + 'on port '.blue + '8004'.yellow);
-util.puts('http server '.blue + 'started '.green.bold + 'on port '.blue + '9004 '.yellow);
+// util.puts('http proxy server'.blue + ' started '.green.bold + 'on port '.blue + '8004'.yellow);
+// util.puts('http server '.blue + 'started '.green.bold + 'on port '.blue + '9004 '.yellow);

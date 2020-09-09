@@ -48,7 +48,7 @@ httpProxy.createServer({
 //
 http.createServer(function (req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.write('request successfully proxied to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
+  res.write('9006request successfully proxied to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
   res.end();
 }).listen(9006);
 
@@ -56,12 +56,13 @@ http.createServer(function (req, res) {
 // Target Http Forwarding Server
 //
 http.createServer(function (req, res) {
-  util.puts('Receiving forward for: ' + req.url);
+  // util.puts('Receiving forward for: ' + req.url);
+  // console.log('-----', res);
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.write('request successfully forwarded to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
+  res.write('9007 request successfully forwarded to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
   res.end();
 }).listen(9007);
 
-util.puts('http proxy server '.blue + 'started '.green.bold + 'on port '.blue + '8006 '.yellow + 'with forward proxy'.magenta.underline);
-util.puts('http server '.blue + 'started '.green.bold + 'on port '.blue + '9006 '.yellow);
-util.puts('http forward server '.blue + 'started '.green.bold + 'on port '.blue + '9007 '.yellow);
+// util.puts('http proxy server '.blue + 'started '.green.bold + 'on port '.blue + '8006 '.yellow + 'with forward proxy'.magenta.underline);
+// util.puts('http server '.blue + 'started '.green.bold + 'on port '.blue + '9006 '.yellow);
+// util.puts('http forward server '.blue + 'started '.green.bold + 'on port '.blue + '9007 '.yellow);

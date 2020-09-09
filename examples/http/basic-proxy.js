@@ -38,7 +38,7 @@ var welcome = [
   '#    #   #     #   #            #      #    #  ####  #    #   #  '
 ].join('\n');
 
-util.puts(welcome.rainbow.bold);
+// util.puts(welcome.rainbow.bold);
 
 //
 // Basic Http Proxy Server
@@ -52,9 +52,9 @@ httpProxy.createServer({
 //
 http.createServer(function (req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.write('request successfully proxied to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
+  res.write('hello word');
   res.end();
 }).listen(9003);
 
-util.puts('http proxy server'.blue + ' started '.green.bold + 'on port '.blue + '8003'.yellow);
-util.puts('http server '.blue + 'started '.green.bold + 'on port '.blue + '9003 '.yellow);
+// util.puts('http proxy server'.blue + ' started '.green.bold + 'on port '.blue + '8003'.yellow);
+// util.puts('http server '.blue + 'started '.green.bold + 'on port '.blue + '9003 '.yellow);
